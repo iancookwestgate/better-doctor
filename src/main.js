@@ -25,12 +25,17 @@ $(document).ready(function() {
               $(".output").append("<img src='" + pic + "'>");
               let bio = index.profile.bio;
               $(".output").append("<p>" + bio + "</p>");
+              let address = index.practices[0].visit_address.street;
+              let city = index.practices[0].visit_address.city;
+              $(".output").append("<p>This doctor's address is: " + address + ", located in " + city + " Oregon.</p>");
+              let phone = index.practices[0].phones[0].number;
+              $(".output").append("<p>This doctor's phone number is: " + phone + ".</p>");
               break;
             }
           }
         });
       }, function(error) {
-        $('.showErrors').text(`There was an error processing your request: ${error.message}`);
+        $('.output').text(`There was an error processing your request: ${error.message}`);
       })
     }
 
@@ -57,9 +62,14 @@ $(document).ready(function() {
             $(".output").append("<p>" + bio + "</p>");
           }
         });
+        if($(".output").text() == ""){
+          let noResult = "I'm sorry, but " + input + " is not a doctor in Portland, OR.";
+          $(".output").append("<p>" + noResult + "</p>");
+        }
       }, function(error) {
-        $('.showErrors').text(`There was an error processing your request: ${error.message}`);
+        $('.output').text(`There was an error processing your request: ${error.message}`);
       })
+
     }
   });
 });

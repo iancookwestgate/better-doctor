@@ -34,6 +34,10 @@ $(document).ready(function() {
             }
           }
         });
+        if($(".output").text() == ""){
+          let noResult = "I'm sorry, but " + input + " is not a doctor in Portland, OR.";
+          $(".output").append("<p>" + noResult + "</p>");
+        }
       }, function(error) {
         $('.output').text(`There was an error processing your request: ${error.message}`);
       })

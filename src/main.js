@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/scss/bootstrap.scss';
 import './sass/styles.scss';
-import { docLocCall, conditionsCall } from "./../src/business-logic.js";
+import { docLocCall } from "./../src/business-logic.js";
 
 $(document).ready(function() {
   $(".lookCondition").click(function() {
@@ -16,7 +16,6 @@ $(document).ready(function() {
 
       promise.then(function(response) {
         let body = JSON.parse(response);
-        console.log(body);
         let input = $("#condition").val();
         body.data.forEach(function(index){
           for (let i = 0; i < index.specialties.length; i++) {
@@ -30,6 +29,8 @@ $(document).ready(function() {
               $(".output").append("<p>This doctor's address is: " + address + ", located in " + city + " Oregon.</p>");
               let phone = index.practices[0].phones[0].number;
               $(".output").append("<p>This doctor's phone number is: " + phone + ".</p>");
+              let availability = index.practices[0].accepts_new_patients;
+              $(".output").append("<p>It is " + availability + " that this doctor is accepting new patients.");
               break;
             }
           }
@@ -56,7 +57,6 @@ $(document).ready(function() {
 
       promise.then(function(response) {
         let body = JSON.parse(response);
-        console.log(body);
         let input = $("#doctor").val();
         body.data.forEach(function(index){
           if (index.profile.bio.match(input)) {

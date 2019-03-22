@@ -1,6 +1,6 @@
 # Project Title
 
-#### By **Robbie Kruszynski**
+#### By **Ian Cook Westgate**
 
 ## Description
 
@@ -8,7 +8,7 @@ Add description here
 
 ## Specs
 
-| Behavior | Input | Output |
+| User can enter a medical issue to receive a list of doctors who can help with that problem in Portland, OR. | "cancer" | Output |
 |----------|-------|--------|
 | Behavior | input | output |
 
@@ -43,10 +43,10 @@ Add description here
 
 ## Support and contact details
 
-_Email robbiekruszynski@gmail.com with any questions._
+_Email iwestgate@hotmail.com with any questions._
 
 ## License
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2018 **Robbie Kruszynski**
+Copyright (c) 2018 **Ian Cook Westgate**

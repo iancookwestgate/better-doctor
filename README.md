@@ -36,8 +36,7 @@ Physician Supreme is an app designed for Epicodus to practice the use of the Bet
 * Babel
 * Webpack
 * ESLint
-* Jasmine
-* Karma
+* BetterDoctor API
 
 ## Known Bugs
 

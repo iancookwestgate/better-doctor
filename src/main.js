@@ -11,16 +11,15 @@ $(document).ready(function() {
 
     promise.then(function(response) {
       let body = JSON.parse(response);
-      const myObj = body.data;
       console.log(body);
       let input = $("#condition").val();
       body.data.forEach(function(index){
         for (let i = 0; i < index.specialties.length; i++) {
           if (index.specialties[i].description.match(input)) {
-            let bio = index.profile.bio;
-            $(".output").append("<p>" + bio + "</p>");
             let pic = index.profile.image_url;
             $(".output").append("<img src='" + pic + "'>");
+            let bio = index.profile.bio;
+            $(".output").append("<p>" + bio + "</p>");
             break;
           }
         }

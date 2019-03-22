@@ -8,11 +8,11 @@ Physician Supreme is an app designed for Epicodus to practice the use of the Bet
 
 ## Specs
 
+|----------|-------|--------|
 | Behavior: User can enter a medical issue to receive a list of doctors who can help with that problem in Portland, OR. | Input: "cancer" | Output: The profiles of 8 doctors who specialize in cancer treatment appear on the webpage. |
-|----------|-------|--------|
 | Behavior: User can enter a doctor's name and receive a list of doctors who have that name in Portland, OR. | Input: "John Butler"| Output: The profile of Dr. John Butler, MD appears on the webpage. |
-|----------|-------|--------|
 | Behavior: If the query response doesn't return any doctors, the application will return a notification that states that no doctors meet the criteria in Portland, OR. | Input: "dysfunction" | Output: "There are no doctors that meet that criteria in Portland, OR."
+|----------|-------|--------|
 
 ## Setup on OSX
 

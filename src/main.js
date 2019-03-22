@@ -13,7 +13,7 @@ $(document).ready(function() {
       let body = JSON.parse(response);
       const myObj = body.data;
       console.log(body);
-      let input = $("#oral").val();
+      let input = $("#condition").val();
       body.data.forEach(function(index){
         for (let i = 0; i < index.specialties.length; i++) {
           if (index.specialties[i].description.match(input)) {

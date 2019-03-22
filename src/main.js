@@ -2,16 +2,16 @@ import $ from 'jquery';
 import 'bootstrap';
 import 'bootstrap/scss/bootstrap.scss';
 import './sass/styles.scss';
-import { apiCall } from "./../src/business-logic.js";
+import { docLocCall, conditionsCall } from "./../src/business-logic.js";
 
 $(document).ready(function() {
   $(".lookCondition").click(function() {
     $(".output").html("");
 
     if($("#condition").val() == ""){
-      alert("Please input your condition.");
+      alert("Please input what hurts.");
     } else {
-      let freshApi = new apiCall();
+      let freshApi = new docLocCall();
       let promise = freshApi.runGithub();
 
       promise.then(function(response) {
@@ -35,7 +35,7 @@ $(document).ready(function() {
           }
         });
         if($(".output").text() == ""){
-          let noResult = "I'm sorry, but " + input + " is not a doctor in Portland, OR.";
+          let noResult = "I'm sorry, but no doctors in Portland, OR have the training to treat your '" + input + ".' Please try using a different word to describe where you are experiencing pain.";
           $(".output").append("<p>" + noResult + "</p>");
         }
       }, function(error) {
@@ -51,7 +51,7 @@ $(document).ready(function() {
     if($("#doctor").val() == ""){
       alert("Please input your doctor.");
     } else {
-      let freshApi = new apiCall();
+      let freshApi = new docLocCall();
       let promise = freshApi.runGithub();
 
       promise.then(function(response) {

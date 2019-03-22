@@ -11,32 +11,37 @@ $(document).ready(function() {
     if($("#condition").val() == ""){
       alert("Please input what hurts.");
     } else {
-      let freshApi = new docLocCall();
-      let promise = freshApi.runGithub();
+      const freshApi = new docLocCall();
+      const promise = freshApi.runGithub();
 
       promise.then(function(response) {
-        let body = JSON.parse(response);
-        let input = $("#condition").val();
+        const body = JSON.parse(response);
+        console.log(body);
+        const input = $("#condition").val();
         body.data.forEach(function(index){
           for (let i = 0; i < index.specialties.length; i++) {
             if (index.specialties[i].description.match(input)) {
-              let pic = index.profile.image_url;
+              const pic = index.profile.image_url;
               $(".output").append("<img src='" + pic + "'>");
-              let bio = index.profile.bio;
+              const bio = index.profile.bio;
               $(".output").append("<p>" + bio + "</p>");
-              let address = index.practices[0].visit_address.street;
-              let city = index.practices[0].visit_address.city;
+              const address = index.practices[0].visit_address.street;
+              const city = index.practices[0].visit_address.city;
               $(".output").append("<p>This doctor's address is: " + address + ", located in " + city + " Oregon.</p>");
-              let phone = index.practices[0].phones[0].number;
+              const phone = index.practices[0].phones[0].number;
               $(".output").append("<p>This doctor's phone number is: " + phone + ".</p>");
-              let availability = index.practices[0].accepts_new_patients;
+              const availability = index.practices[0].accepts_new_patients;
               $(".output").append("<p>It is " + availability + " that this doctor is accepting new patients.");
+              if (typeof index.practices[0].website == "string") {
+                const website = index.practices[0].website;
+                $(".output").append("<p>Visit this doctor's website at: " + website + "</p>");
+              }
               break;
             }
           }
         });
         if($(".output").text() == ""){
-          let noResult = "I'm sorry, but no doctors in Portland, OR have the training to treat your '" + input + ".' Please try using a different word to describe where you are experiencing pain.";
+          const noResult = "I'm sorry, but no doctors in Portland, OR have the training to treat your '" + input + ".' Please try using a different word to describe where you are experiencing pain.";
           $(".output").append("<p>" + noResult + "</p>");
         }
       }, function(error) {
@@ -52,22 +57,22 @@ $(document).ready(function() {
     if($("#doctor").val() == ""){
       alert("Please input your doctor.");
     } else {
-      let freshApi = new docLocCall();
-      let promise = freshApi.runGithub();
+      const freshApi = new docLocCall();
+      const promise = freshApi.runGithub();
 
       promise.then(function(response) {
-        let body = JSON.parse(response);
-        let input = $("#doctor").val();
+        const body = JSON.parse(response);
+        const input = $("#doctor").val();
         body.data.forEach(function(index){
           if (index.profile.bio.match(input)) {
-            let pic = index.profile.image_url;
+            const pic = index.profile.image_url;
             $(".output").append("<img src='" + pic + "'>");
-            let bio = index.profile.bio;
+            const bio = index.profile.bio;
             $(".output").append("<p>" + bio + "</p>");
           }
         });
         if($(".output").text() == ""){
-          let noResult = "I'm sorry, but " + input + " is not a doctor in Portland, OR.";
+          const noResult = "I'm sorry, but " + input + " is not a doctor in Portland, OR.";
           $(".output").append("<p>" + noResult + "</p>");
         }
       }, function(error) {

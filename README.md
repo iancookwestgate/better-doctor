@@ -14,15 +14,13 @@ Physician Supreme is an app designed for Epicodus to practice the use of the Bet
 | User can enter a doctor's name and receive a list of doctors who have that name in Portland, OR. | "John Butler"| The profile of Dr. John Butler, MD appears on the webpage. |
 | If the query response doesn't return any doctors, the application will return a notification that states that no doctors meet the criteria in Portland, OR. | "dysfunction" | "I'm sorry, but no doctors in Portland, OR have the training to treat your 'dysfunction.' Please try using a different word to describe where you are experiencing pain."
 
-## Setup on OSX
+## Setup
 
 * Install Node.js.
-* Install karma-cli globally: `npm install -g karma-cli`.
 * Clone the repo.
 * `npm install` to install dependencies.
 * `npm run start` to build and start the dev server.
 * `npm run lint` to explicitly run ESLint.
-* `npm run test` to run the unit tests with Karma and Jasmine. Visit `localhost:9876` to view the tests.
 
 ## Technologies Used
 

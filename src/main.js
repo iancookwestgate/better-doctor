@@ -27,9 +27,6 @@ $(document).ready(function() {
               $(".output").append("<p>" + bio + "</p>");
               break;
             }
-            // if (!this.text) {
-            //   alert("There are no doctors that meet that criteria in Portland, OR.")
-            // }
           }
         });
       }, function(error) {
@@ -53,14 +50,11 @@ $(document).ready(function() {
         console.log(body);
         let input = $("#doctor").val();
         body.data.forEach(function(index){
-          for (let i = 0; i < index.specialties.length; i++) {
-            if (index.specialties[i].description.match(input)) {
-              let pic = index.profile.image_url;
-              $(".output").append("<img src='" + pic + "'>");
-              let bio = index.profile.bio;
-              $(".output").append("<p>" + bio + "</p>");
-              break;
-            }
+          if (index.profile.bio.match(input)) {
+            let pic = index.profile.image_url;
+            $(".output").append("<img src='" + pic + "'>");
+            let bio = index.profile.bio;
+            $(".output").append("<p>" + bio + "</p>");
           }
         });
       }, function(error) {

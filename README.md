@@ -12,7 +12,7 @@ Physician Supreme is an app designed for Epicodus to practice the use of the Bet
 |----------|-------|--------|
 | User can enter where they hurt to receive a list of doctors who can help with that problem in Portland, OR. | "teeth" | The profiles of 2 doctors who specialize in dental care appear on the webpage. |
 | User can enter a doctor's name and receive a list of doctors who have that name in Portland, OR. | "John Butler"| The profile of Dr. John Butler, MD appears on the webpage. |
-| If the query response doesn't return any doctors, the application will return a notification that states that no doctors meet the criteria in Portland, OR. | "dysfunction" | "There are no doctors that meet that criteria in Portland, OR."
+| If the query response doesn't return any doctors, the application will return a notification that states that no doctors meet the criteria in Portland, OR. | "dysfunction" | "I'm sorry, but no doctors in Portland, OR have the training to treat your 'dysfunction.' Please try using a different word to describe where you are experiencing pain."
 
 ## Setup on OSX
 

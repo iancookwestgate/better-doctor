@@ -1,4 +1,4 @@
-export class docLocCall {
+export class DocLocCall {
   runGithub() {
     return new Promise(function(resolve, reject) {
       const request = new XMLHttpRequest();

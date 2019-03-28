@@ -19,8 +19,10 @@ Physician Supreme is an app designed for Epicodus to practice the use of the Bet
 * Install Node.js.
 * Clone the repo.
 * `npm install` to install dependencies.
+* Make a file called .env in the root directory. Sign up for the Better Doctor API to get a key, and place it in this file like this: exports.apiKey=KEYGOESHERE
 * `npm run start` to build and start the dev server.
 * `npm run lint` to explicitly run ESLint.
+
 
 ## Technologies Used
 
